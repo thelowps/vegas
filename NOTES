@@ -1,0 +1,10 @@
+-- NOTES --
+
+Architecture
+I'm thinking, to keep our high-level crypto and user interface logic away from our ugly threading and networking code, maybe we can have a library that does all that for us.
+We would communicate with it by signing up callback functions to certain events, such as receiving a chat, sending a chat, connecting, disconnecting, or on error.
+Key functions:
+connect_to_server
+disconnect_from_server
+enter_chatroom
+send_chat
